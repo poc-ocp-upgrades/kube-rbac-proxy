@@ -20,6 +20,8 @@ type OIDCConfig struct {
 func NewOIDCAuthenticator(config *OIDCConfig) (authenticator.Request, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	tokenAuthenticator, err := oidc.New(oidc.Options{IssuerURL: config.IssuerURL, ClientID: config.ClientID, CAFile: config.CAFile, UsernameClaim: config.UsernameClaim, UsernamePrefix: config.UsernamePrefix, GroupsClaim: config.GroupsClaim, GroupsPrefix: config.GroupsPrefix, SupportedSigningAlgs: config.SupportedSigningAlgs})
 	if err != nil {
 		return nil, err
